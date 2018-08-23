@@ -1,14 +1,16 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      首頁
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <ion-list no-lines>
+    <button ion-button block *ngFor="let category of categories" (click)="nextPage(category)">
+      {{category.title}}
+    </button>
+  </ion-list>
 </ion-content>
