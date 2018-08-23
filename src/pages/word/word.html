@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      {{category}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list no-lines *ngFor="let word of words">
+    <div class="words">
+      <button ion-button icon-right (click)="nextPage(word)">
+        {{word.title}}
+      </button>
+      <ion-icon *ngIf="word.remark!==false" name="md-information-circle" (click)="iconClick(word)"></ion-icon>
+    </div>
+  </ion-list>
+</ion-content>
