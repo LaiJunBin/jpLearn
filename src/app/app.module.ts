@@ -13,6 +13,8 @@ import { AutoPlayPage } from "../pages/autoplay/autoplay";
 import { File } from "@ionic-native/File";
 import { HttpModule } from '@angular/http';
 
+import { LongPressModule } from 'ionic-long-press';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -24,7 +26,8 @@ import { HttpModule } from '@angular/http';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpModule
+    HttpModule,
+    LongPressModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
