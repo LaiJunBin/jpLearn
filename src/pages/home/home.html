@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      首頁
+      所有漢字
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -9,8 +9,14 @@
 <ion-content padding>
 
   <ion-list no-lines>
-    <button ion-button block *ngFor="let category of categories" (click)="nextPage(category)">
-      {{category.title}}
-    </button>
+    <div class="words" *ngFor="let word of words">
+      <button ion-button icon-right (click)="nextPage(word)">
+        {{word.title}}
+      </button>
+      <ion-icon *ngIf="word.remark!==false" name="md-information-circle" (click)="iconClick(word)"></ion-icon>
+    </div>
   </ion-list>
+
+
+
 </ion-content>

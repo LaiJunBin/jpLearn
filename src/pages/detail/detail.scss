@@ -1,0 +1,25 @@
+div.wrapper {
+  height: 100px;
+  perspective: 2000px;
+  margin: 20px 0;
+  .card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+    }
+    .card-back {
+      transform: rotateY(180deg);
+    }
+    &.is-flipped {
+      transform: rotateY(180deg);
+    }
+  }
+}

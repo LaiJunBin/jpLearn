@@ -7,7 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { WordPage } from "../pages/word/word";
-import { PronunciationPage } from "../pages/pronunciation/pronunciation";
+import { DetailPage } from "../pages/detail/detail";
 
 import { File } from "@ionic-native/File";
 import { HttpModule } from '@angular/http';
@@ -17,7 +17,7 @@ import { HttpModule } from '@angular/http';
     MyApp,
     HomePage,
     WordPage,
-    PronunciationPage
+    DetailPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +29,7 @@ import { HttpModule } from '@angular/http';
     MyApp,
     HomePage,
     WordPage,
-    PronunciationPage
+    DetailPage
   ],
   providers: [
     StatusBar,

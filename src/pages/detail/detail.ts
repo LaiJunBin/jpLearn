@@ -5,17 +5,14 @@ import { File } from "@ionic-native/File";
 import { Http } from "@angular/http";
 import "rxjs";
 
-import { DetailPage } from "../detail/detail";
-
 @Component({
-  selector: 'page-word',
-  templateUrl: 'word.html'
+  selector: 'page-detail',
+  templateUrl: 'detail.html'
 })
-export class WordPage {
+export class DetailPage {
 
-  word: any;
-
-  pronunciations: any;
+  word: string;
+  pronunciation: string;
 
   constructor(
     public navCtrl: NavController,
@@ -24,14 +21,17 @@ export class WordPage {
     public navParams: NavParams,
     private alertCtrl: AlertController
   ) {
-    this.word = navParams.data;
-    this.pronunciations = Object.keys(this.word).filter(key => ['remark', 'title'].indexOf(key) === -1);
+
+    this.word = navParams.get('word');
+    this.pronunciation = navParams.get('pronunciation');
+    this.word[this.pronunciation] = this.word[this.pronunciation].map(p => {
+      p.status = false;
+      return p;
+    })
   }
 
-  nextPage(word, pronunciation) {
-    this.navCtrl.push(DetailPage, {
-      word, pronunciation
-    });
+  switchStatus(w) {
+    w.status = !w.status;
   }
 
 }
