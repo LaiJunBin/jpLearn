@@ -14,6 +14,9 @@ export class DetailPage {
   word: string;
   pronunciation: string;
 
+  search: string;
+  regexp: any;
+
   constructor(
     public navCtrl: NavController,
     public file: File,
@@ -21,6 +24,7 @@ export class DetailPage {
     public navParams: NavParams,
     private alertCtrl: AlertController
   ) {
+    this.regexp = new RegExp(`.*`);
 
     this.word = navParams.get('word');
     this.pronunciation = navParams.get('pronunciation');
@@ -32,6 +36,11 @@ export class DetailPage {
 
   switchStatus(w) {
     w.status = !w.status;
+  }
+
+
+  onInput(evt) {
+    this.regexp = new RegExp(`(.*)${this.search}(.*)`);
   }
 
 }

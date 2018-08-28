@@ -9,10 +9,14 @@
 <ion-content padding>
 
   <ion-list no-lines>
-    <div class="wrapper" *ngFor="let w of word[pronunciation]">
-      <div class="card" [ngClass]="w.status?'is-flipped':''" (click)="switchStatus(w)">
-        <button ion-button block class="card-face card-front">{{w.cn}}</button>
-        <button ion-button block class="card-face card-back">{{w.jp}}</button>
+    <ion-searchbar [(ngModel)]="search" (ionInput)="onInput($event)">
+    </ion-searchbar>
+    <div *ngFor="let w of word[pronunciation]">
+      <div class="wrapper" *ngIf="regexp.test(w.cn) || regexp.test(w.jp)">
+        <div class="card" [ngClass]="w.status?'is-flipped':''" (click)="switchStatus(w)">
+          <button ion-button block class="card-face card-front">{{w.cn}}</button>
+          <button ion-button block class="card-face card-back">{{w.jp}}</button>
+        </div>
       </div>
     </div>
   </ion-list>
