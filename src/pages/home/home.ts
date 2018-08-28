@@ -15,6 +15,9 @@ export class HomePage {
 
   words: any[] = [];
 
+  search: string;
+  regexp: any;
+
   constructor(
     public navCtrl: NavController,
     public file: File,
@@ -22,6 +25,8 @@ export class HomePage {
     public navParams: NavParams,
     private alertCtrl: AlertController
   ) {
+    this.regexp = new RegExp(`.*`);
+
     this.http.get(`assets/data/word.json`).map(res => res.json()).subscribe(data => {
 
 
@@ -95,6 +100,11 @@ export class HomePage {
       alert("目錄讀取失敗");
     })
 
+  }
+
+
+  onInput(evt) {
+    this.regexp = new RegExp(`(.*)${this.search}(.*)`);
   }
 
 }

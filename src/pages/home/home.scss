@@ -2,8 +2,11 @@ div.words {
   position: relative;
   display: flex;
   align-items: center;
-  button {
+  &>div {
     flex: 1;
+    button {
+      flex: 1;
+    }
   }
   ion-icon {
     position: absolute;

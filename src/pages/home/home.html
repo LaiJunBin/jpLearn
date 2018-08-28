@@ -9,10 +9,14 @@
 <ion-content padding>
 
   <ion-list no-lines>
+    <ion-searchbar [(ngModel)]="search" (ionInput)="onInput($event)">
+    </ion-searchbar>
     <div class="words" *ngFor="let word of words">
-      <button ion-button icon-right (click)="nextPage(word)">
-        {{word.title}}
-      </button>
+      <div *ngIf="regexp.test(word.title)">
+        <button block ion-button icon-right (click)="nextPage(word)">
+          {{word.title}}
+        </button>
+      </div>
       <ion-icon *ngIf="word.remark!==false" name="md-information-circle" (click)="iconClick(word)"></ion-icon>
     </div>
   </ion-list>
