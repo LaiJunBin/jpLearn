@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { WordPage } from "../pages/word/word";
 import { DetailPage } from "../pages/detail/detail";
+import { AutoPlayPage } from "../pages/autoplay/autoplay";
 
 import { File } from "@ionic-native/File";
 import { HttpModule } from '@angular/http';
@@ -17,7 +18,8 @@ import { HttpModule } from '@angular/http';
     MyApp,
     HomePage,
     WordPage,
-    DetailPage
+    DetailPage,
+    AutoPlayPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { HttpModule } from '@angular/http';
     MyApp,
     HomePage,
     WordPage,
-    DetailPage
+    DetailPage,
+    AutoPlayPage
   ],
   providers: [
     StatusBar,
