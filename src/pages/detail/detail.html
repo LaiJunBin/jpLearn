@@ -9,6 +9,8 @@
 <ion-content padding>
 
   <ion-list no-lines>
+    <button ion-button block (click)="autoplay()">自動播放</button>
+    <button ion-button block (click)="addWord()">新增單字</button>
     <ion-searchbar [(ngModel)]="search" (ionInput)="onInput($event)">
     </ion-searchbar>
     <div *ngFor="let w of word[pronunciation]">
